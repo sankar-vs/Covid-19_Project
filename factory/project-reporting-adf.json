@@ -1,0 +1,9 @@
+{
+	"name": "project-reporting-adf",
+	"location": "southcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ecd93165-80c8-4620-a533-4572db2748e2",
+		"tenantId": "33a731d3-2da4-4b5d-921e-186036c630b9"
+	}
+}

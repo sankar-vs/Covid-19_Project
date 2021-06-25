@@ -1,0 +1,33 @@
+{
+	"name": "pl_process_population_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Exceute Population Transformation",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Project/transform/transform_population_data"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_db_project_cluster",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"folder": {
+			"name": "Population_DataBricks"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-06-24T03:43:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

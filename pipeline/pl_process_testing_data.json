@@ -1,0 +1,37 @@
+{
+	"name": "pl_process_testing_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "df_transform_testing_data",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "df_transform_testing",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "DataFlow_Testing"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-06-24T00:50:34Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

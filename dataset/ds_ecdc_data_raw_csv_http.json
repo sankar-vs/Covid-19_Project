@@ -1,0 +1,37 @@
+{
+	"name": "ds_ecdc_data_raw_csv_http",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_ecdc_http_connection_raw",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"relativeURL": {
+				"type": "string"
+			},
+			"baseURL": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "HTTP_Ingestion"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@dataset().relativeURL",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

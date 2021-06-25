@@ -1,0 +1,33 @@
+{
+	"name": "tr_sql_copy_case_and_deaths",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pl_sqlDB_cases_and_deaths_data",
+				"type": "PipelineReference"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 24,
+			"startTime": "2021-06-23T00:00:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 50,
+			"retryPolicy": {
+				"intervalInSeconds": 30
+			},
+			"dependsOn": [
+				{
+					"type": "TumblingWindowTriggerDependencyReference",
+					"referenceTrigger": {
+						"referenceName": "tri_process_cases_and_deaths_data",
+						"type": "TriggerReference"
+					}
+				}
+			]
+		}
+	}
+}
