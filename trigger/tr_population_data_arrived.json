@@ -2,11 +2,17 @@
 	"name": "tr_population_data_arrived",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
 					"referenceName": "pl_execute_population_pipelines",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_population_data",
 					"type": "PipelineReference"
 				}
 			}
